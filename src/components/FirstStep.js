@@ -16,7 +16,8 @@ const FirstStep = (props) => {
       birthdate: user.birthdate,
       user_email: user.user_email,
       user_password: user.user_password,
-      grade: user.grade
+      grade: user.grade,
+      subject: user.subject
     }
   });
   
@@ -28,7 +29,7 @@ const FirstStep = (props) => {
   };
   const current = new Date().toISOString().split("T")[0];
  
-  const actions = [
+  const grades = [
     { label: "1st", value: "1st" },
     { label: "2nd", value: "2nd" },
     { label: "3rd", value: "3rd" },
@@ -41,6 +42,12 @@ const FirstStep = (props) => {
     { label: "10th", value: "10th" },
     { label: "11th", value: "11th" },
     { label: "12th", value: "12th" }
+  ];
+
+  const subjects = [
+    {label: "Mathematics", value: "mathemactics" },
+    {label: "Physics", value: "physics" },
+    {label: "Chemistry", value: "chemistry" },
   ];
 
   return (
@@ -175,7 +182,7 @@ const FirstStep = (props) => {
         <Form.Label>Grade</Form.Label>
           <Form.Group controlId="Grade"> 
           <RHFInput 
-            as={<Select options={actions} />}
+            as={<Select options={grades} />}
             rules={{ required: 'Please select an option'}}
             placeholder= "Select your grade"
             name="grade"
@@ -184,6 +191,21 @@ const FirstStep = (props) => {
           />
             {errors.grade && (
                 <p className="errorMsg">{errors.grade && errors.grade.type === 'required' && "Please select your grade"}</p>
+              )}
+        </Form.Group>
+
+        <Form.Label>Subject</Form.Label>
+          <Form.Group controlId="Subject"> 
+          <RHFInput 
+            as={<Select options={subjects} />}
+            rules={{ required: 'Please select an option'}}
+            placeholder= "Select your subject"
+            name="subject"
+            register={register}
+            setValue={setValue}
+          />
+            {errors.subject && (
+                <p className="errorMsg">{errors.subject && errors.subject.type === 'required' && "Please select your subject"}</p>
               )}
         </Form.Group>
             
