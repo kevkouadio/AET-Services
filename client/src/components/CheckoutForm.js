@@ -74,6 +74,8 @@ export default function CheckoutForm(props) {
 
   return (
     <React.Fragment>
+      <div className="col-md-12 offset-md-5">
+        <br/>
       <h4 className="d-flex justify-content-between align-items-center mb-3">
         <span className="text-muted">Pay with card</span>
       </h4>
@@ -134,10 +136,11 @@ export default function CheckoutForm(props) {
 
         <hr className="mb-4" />
         <button className="btn btn-dark w-100" type="submit" disabled={loading}>
-          {loading ? <div className="spinner-border spinner-border-sm text-light" role="status"></div> : `PAY ₹${props.amount}`}
+          {loading ? <div className="spinner-border spinner-border-sm text-light" role="status"></div> : `PAY $${props.amount}`}
         </button>
         {errorMsg && <div className="text-danger mt-2">{errorMsg}</div>}
       </form>
+      </div>
     </React.Fragment>
   );
 }
