@@ -8,7 +8,8 @@ $blue-color: #22ac11;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Acme', sans-serif;
+  //font-size: 20px;
   color: $base-color;
   background-image: url("../src/pages/assets/high-school-students-classmates-with-helps-friend-homework-learning_28283-874.jpg");
 }
@@ -95,9 +96,9 @@ img {
 }
 
 .card {
-  margin-top: 15px;
-  background-color: rgba(255, 255, 255, 0.3);
-  font-size: 18px;
+  margin-top: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+  // font-size: 18px;
 }
 
 .login-error {
