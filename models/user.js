@@ -8,11 +8,6 @@ const userSchema = new Schema(
       //required: true,
       trim: true
     },
-    middle_name: {
-      type: String,
-      //required: false,
-      trim: true
-    },
     last_name: {
       type: String,
       //required: true,
@@ -20,24 +15,18 @@ const userSchema = new Schema(
     },
     birthdate: {
       type: String,
-      //required: true,
+      required: true,
       trim: true
     },
-    user_email: {
+    email: {
       type: String,
-      required: true,
+      //required: true,
       trim: true,
       validate(value) {
         if (!value.match(/^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/)) {
           throw new Error('Email is not valid.');
         }
       }
-    },
-    user_password: {
-      type: String,
-      required: true,
-      trim: true,
-      minlength: 6
     },
     grade: {
       type: String,

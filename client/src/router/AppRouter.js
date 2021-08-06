@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import FirstStep from '../components/FirstStep';
+import Register from '../pages/Register';
 import Header from '../components/Header';
-import SecondStep from '../components/SecondStep';
-import ThirdStep from '../components/ThirdStep';
+// import SecondStep from '../components/SecondStep';
+// import ThirdStep from '../components/ThirdStep';
 
 
 const AppRouter = () => {
@@ -22,14 +22,10 @@ return (
   <div className="container">
     <Header />
     <Switch>
-      <Route
-        render={(props) => (
-          <FirstStep {...props} user={user} updateUser={updateUser} />
-        )}
-        path="/"
-        exact={true}
-      />
-      <Route
+      <Route exact path={["/register"]}>
+          <Register />
+      </Route>
+      {/* <Route
         render={(props) => (
           <SecondStep {...props} user={user} updateUser={updateUser} />
         )}
@@ -40,7 +36,7 @@ return (
           <ThirdStep {...props} user={user}  />
         )}
         path="/third"
-      />
+      /> */}
     </Switch>
   </div>
 </BrowserRouter>  
