@@ -39,18 +39,6 @@ export default function CheckoutForm(props) {
   const stripe = useStripe();
   const elements = useElements();
 
-  const { user } = props;
-  const { register, errors } = useForm({
-    // defaultValues: {
-    //   first_name: user.first_name,
-    //   last_name: user.last_name,
-    //   birthdate: user.birthdate,
-    //   email: user.user_email,
-    //   grade: user.grade,
-    //   subject: user.subject
-    // }
-  });
-
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
 
@@ -135,77 +123,12 @@ export default function CheckoutForm(props) {
   };
   
   const current = new Date().toISOString().split("T")[0];
-  //const [paymentCompleted, setPaymentCompleted] = useState(false);
 
   return (
     <React.Fragment>
       <div className="col-md-11 offset-md-5">
       <form className="input-form" onSubmit={handleSubmit}>
-      {/* <Form.Group controlId="first_name">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="first_name"
-            placeholder="Enter your first name"
-            autoComplete="off"
-            ref={register({
-              required: 'First name is required.',
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: 'First name should contain only characters.'
-              }
-            })}
-            className={`${errors.first_name ? 'input-error' : ''}`}
-          />
-          {errors.first_name && (
-            <p className="errorMsg">{errors.first_name.message}</p>
-          )}
-        </Form.Group>
-
-        <Form.Group controlId="last_name">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="last_name"
-            placeholder="Enter your last name"
-            autoComplete="off"
-            ref={register({
-              required: 'Last name is required.',
-              pattern: {
-                value: /^[a-zA-Z]+$/,
-                message: 'Last name should contain only characters.'
-              }
-            })}
-            className={`${errors.last_name ? 'input-error' : ''}`}
-          />
-          {errors.last_name && (
-            <p className="errorMsg">{errors.last_name.message}</p>
-          )}
-        </Form.Group>
-
-        <Form.Group controlId="date-of-bitrh">
-          <Form.Label>Date of Birth</Form.Label>
-          <Form.Control
-            type="date"
-            name="birthdate"
-            placeholder="select your date of birth"
-            autoComplete="off"
-            value={current.birthdate} 
-            max={current}
-            ref={register({
-              required: 'date of birth is required.',
-              pattern: {
-                message: 'please select your date of birth.'
-              }
-            })}
-            className={`${errors.birthdate ? 'input-error' : ''}`}
-          />
-          {errors.last_name && (
-            <p className="errorMsg">{errors.birthdate.message}</p>
-          )}
-        </Form.Group> */}
-
-<Input
+              <Input
                 onChange={handleInputChange}
                 name="first_name"
                 placeholder="First name"
@@ -243,6 +166,7 @@ export default function CheckoutForm(props) {
             <input
               id="cc-name"
               type="text"
+              placeholder="Enter full name"
               className="form-control"
               value={name}
               onChange={e => setName(e.target.value)}
@@ -253,6 +177,7 @@ export default function CheckoutForm(props) {
               id="cc-email"
               type="text"
               className="form-control"
+              placeholder="Email"
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
@@ -284,7 +209,7 @@ export default function CheckoutForm(props) {
         </div>
 
         <hr className="mb-4" />
-        <button className="btn btn-dark w-100" type="submit" disabled={loading}>
+        <button className="btn btn-success w-100" type="submit" disabled={loading}>
           {loading ? <div className="spinner-border spinner-border-sm text-light" role="status"></div> : `Pay $${props.amount} and register`}
         </button>
         {errorMsg && <div className="text-danger mt-2">{errorMsg}</div>}
