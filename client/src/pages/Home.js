@@ -7,7 +7,7 @@ function Home() {
         <div className="card container xl:max-w-screen-xl mx-auto py-12 px-6 text-center">
             <div className="card-body col-md-12 order-md-5">
                 <h1 className="card-title" id="welcome">Welcome to Academics Excellence Tutorial Services.</h1>
-                <img src="\assets\81441040-education-teaching-learning-technology-and-people-concept-two-high-school-students-or-classmates-wit.jpg" alt="two-school-students"/>
+                <img className="card-img-top" src="\assets\81441040-education-teaching-learning-technology-and-people-concept-two-high-school-students-or-classmates-wit.jpg" alt="two-school-students"/>
                 <br/>
                 <p className="card-text" id="homeText">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at augue ante. 
