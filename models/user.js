@@ -5,12 +5,12 @@ const userSchema = new Schema(
   {
     first_name: {
       type: String,
-      //required: true,
+      required: true,
       trim: true
     },
     last_name: {
       type: String,
-      //required: true,
+      required: true,
       trim: true
     },
     birthdate: {
@@ -30,14 +30,15 @@ const userSchema = new Schema(
     },
     grade: {
       type: String,
-      //required: true,
+      required: true,
       trim: true
     },
     subject: {
       type: String,
-      //required: true,
+      required: true,
       trim: true
-    }
+    },
+    date: { type: Date, default: Date.now }
   }
 );
 
