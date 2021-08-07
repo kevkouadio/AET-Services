@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
-    "country-state-city": "^2.2.0",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^3.7.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
@@ -25,8 +25,8 @@
     "react-scripts": "4.0.3",
     "react-select": "^4.3.1",
     "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^7.0.4",
     "stripe": "^8.167.0",
-    "sweetalert2": "^10.15.5",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

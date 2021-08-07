@@ -6,10 +6,7 @@ import {
 import { stripePaymentMethodHandler } from './script';
 import { useForm } from 'react-hook-form';
 import { Form, Button } from 'react-bootstrap';
-//import Select from 'react-select';
-//import {Select, SubjectSelect} from './Form';
 import { Input, Select, FormBtn, SubjectSelect } from "./Form";
-//import { RHFInput } from 'react-hook-form-input';
 import API from "../utils/API";
 
 const CARD_ELEMENT_OPTIONS = {
@@ -161,7 +158,8 @@ export default function CheckoutForm(props) {
             onChange={handleInputChange}/>
 
             <br/>
-            {/* payment information */}
+            {/* <h4><span class="badge rounded-pill bg-info text-dark center">Payment info</span></h4> */}
+
             <label htmlFor="cc-name">Name on card</label>
             <input
               id="cc-name"
@@ -182,7 +180,7 @@ export default function CheckoutForm(props) {
               onChange={e => setEmail(e.target.value)}
             />
 
-            <label htmlFor="cc-number">Card Number</label>
+            <label htmlFor="cc-number">Card Number <i class="fa fa-credit-card" aria-hidden="true"></i></label>
             <CardNumberElement
               id="cc-number"
               className="form-control"
@@ -210,7 +208,7 @@ export default function CheckoutForm(props) {
 
         <hr className="mb-4" />
         <button className="btn btn-success w-100" type="submit" disabled={loading}>
-          {loading ? <div className="spinner-border spinner-border-sm text-light" role="status"></div> : `Pay $${props.amount} and register`}
+          {loading ? <div className="spinner-border spinner-border-sm text-light" role="status"></div> : `Pay and register`}
         </button>
         {errorMsg && <div className="text-danger mt-2">{errorMsg}</div>}
       </form>

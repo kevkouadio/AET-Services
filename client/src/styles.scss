@@ -91,9 +91,36 @@ h1 {
   font-weight: 300;
 }
 
-img {
-  opacity: 0.4;
+#contact-form {
+  float: right;
 }
+
+#welcome {
+  font-size: 60px;
+}
+
+#homeText {
+  font-size: 25px;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 1.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;          
+}
+
+.footer {
+  min-height: 30px; 
+  position: relative;
+}
+
 
 .card {
   margin-top: 25px;

@@ -17,7 +17,7 @@ const successMessage = () => {
             <span>You've completed your registration process</span>
           </h2>
           <p className="text-lg mt-3">Check your emails for the receipt.</p>
-          <a href="/register" class="btn btn-primary">Retun to the home page</a>
+          <a href="/" className="btn btn-primary">Retun to the home page</a>
         </div>
       </div>
     </>

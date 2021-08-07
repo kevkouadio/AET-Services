@@ -10,12 +10,15 @@ function Nav() {
       <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/register">Register</a>
+            <a className="nav-link active" href="/register">Register</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link active" href="/contact">Contact Us</a>
           </li>
         </ul>  
       </div>
