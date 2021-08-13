@@ -4,7 +4,8 @@ import Register from '../pages/Register';
 import Nav from '../components/Nav';
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import StudentsList from '../pages/StudentsList';
 
 
 const AppRouter = () => {
@@ -22,6 +23,9 @@ return (
       </Route>
       <Route exact path={"/contact"}>
         <Contact />
+      </Route>
+      <Route exact path={"/studentslist"}>
+        <StudentsList />
       </Route>
     </Switch>
   </div>

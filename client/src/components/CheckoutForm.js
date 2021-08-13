@@ -41,12 +41,12 @@ export default function CheckoutForm(props) {
 
   // Load all books and store them with setBooks
   useEffect(() => {
-    loadBooks()
+    loadStudents()
   }, [])
 
   // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
+  function loadStudents() {
+    API.getStudent()
       .then(res => 
         setBooks(res.data)
       )
@@ -108,14 +108,14 @@ export default function CheckoutForm(props) {
       subject: formObject.subject
     };
     console.log(data);
-    API.saveBook({
+    API.saveStudent({
       first_name: formObject.first_name,
       last_name: formObject.last_name,
       birthdate: formObject.birthdate,
       grade: formObject.grade,
       subject: formObject.subject
     })
-      .then(res => loadBooks())
+      .then(res => loadStudents())
       .catch(err => console.log(err));
   };
   
